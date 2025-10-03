@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
 import Navigation from "./Navigation";
@@ -8,10 +8,10 @@ function App() {
   return (
     <BrowserRouter>
       <Navigation />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/about" component={About} />
+      </Switch>
     </BrowserRouter>
   );
 }
